@@ -1,0 +1,10 @@
+
+<!-- Afficher un PostListItemComponent pour chaque post dans l'array reçu -->
+<app-post-list-item ></app-post-list-item>
+<p>Mis à jour : {{ lastUpdate | async | date: 'short' | uppercase }}</p>
+<p>Mis à jour : {{ appareilName }}</p>
+<p>Mis à jour : {{ content }}</p>
+<ul class="list-group">
+  <!-- <app-post-list-item *ngFor="let appareil of appareils" [appareilName]="appareil.name" [appareilStatus]="appareil.status">
+  </app-post-list-item> -->
+</ul>

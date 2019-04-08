@@ -1,0 +1,11 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': appareilStatus === 'allumé',
+                'list-group-item-danger': appareilStatus === 'éteint'}">
+  <div style="width:20px;height:20px;background-color:red;" *ngIf="appareilStatus === 'éteint'"></div>
+
+  <h4>Titre : {{ appareilName }}</h4>
+  <h4>Date de création : {{ appareilName }} </h4>
+  <h4>Contenu : {{ appareilName }} </h4>
+  <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Love it!</button>
+  <button class="btn btn-danger" [disabled]="!isAuth" (click)="onAllumer()">Don't love it</button>
+</li>
