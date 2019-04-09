@@ -1,11 +1,13 @@
+<!-- Quand un post a plus de "love it" que de "don't love it"(loveIts > 0), il sera coloré en vert, et inversement quand loveIts < 0, il sera coloré en rouge. -->
 <li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': appareilStatus === 'allumé',
-                'list-group-item-danger': appareilStatus === 'éteint'}">
-  <div style="width:20px;height:20px;background-color:red;" *ngIf="appareilStatus === 'éteint'"></div>
+                'list-group-item-success': postLoveIts > 0,
+                'list-group-item-danger': postLoveIts < 0}">
+  <div style="width:20px;height:20px;background-color:red;" *ngIf="appareilName === 'Frigo'"></div>
 
-  <h4>Titre : {{ appareilName }}</h4>
-  <h4>Date de création : {{ appareilName }} </h4>
-  <h4>Contenu : {{ appareilName }} </h4>
-  <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Love it!</button>
-  <button class="btn btn-danger" [disabled]="!isAuth" (click)="onAllumer()">Don't love it</button>
+  <h2>{{ postTitle }}</h2>
+  <h4>{{ postCreated_at | date: 'short' | uppercase }} </h4>
+  <p>{{ postContent }} </p>
+  <h4>Likes : {{ postLoveIts }} </h4>
+  <button class="btn btn-success" (click)="onLike()">Love it!</button>
+  <button class="btn btn-danger" (click)="onDisLike()">Don't love it</button>
 </li>
