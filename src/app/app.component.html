@@ -1,15 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div style="text-align:center">
-        <h1>Bienvenue sur la {{ title }}!</h1>
+<div class="container-fluid">
+  <nav class="navbar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="posts">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="new">Ajouter un post</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Bienvenue sur la blog {{title}}</h1>
+          </div>
+        </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <router-outlet></router-outlet>
       </div>
-      <div>
-        <h2>Posts:</h2>
-      </div>
-      <ul class="list-group">
-        <app-post-list [posts]="posts"></app-post-list>
-      </ul>
     </div>
   </div>
+
 </div>
