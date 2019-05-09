@@ -2,7 +2,6 @@
 <li [ngClass]="{'list-group-item': true,
                 'list-group-item-success': postLoveIts > 0,
                 'list-group-item-danger': postLoveIts < 0}">
-  <div style="width:20px;height:20px;background-color:red;" *ngIf="appareilName === 'Frigo'"></div>
 
   <h2>{{ postTitle }}</h2>
   <h4>{{ postCreated_at | date: 'short' | uppercase }} </h4>
